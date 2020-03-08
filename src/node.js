@@ -328,6 +328,20 @@ class Node {
     return node
   }
 
+  // JSON ──────────────────────────────────────────────────────────────────────
+
+  // Constructs a JSON representation of the current node.
+  // Accepts the same parameters as `#encode()`.
+  toJSON(constructor) {
+    return JSON.stringify(this.encode(constructor), null, 2)
+  }
+
+  // Parses a JSON tree.
+  // Accepts the same parameters as `Node#parse()`.
+  static fromJSON(json, constructor) {
+    return this.parse(JSON.parse(json), constructor)
+  }
+
   // Helpers ───────────────────────────────────────────────────────────────────
 
   static clone(object) {

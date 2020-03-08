@@ -10,6 +10,7 @@
 - [Importing and exporting](#importing-and-exporting)
   - [Exporting to native object](#exporting-to-native-object)
   - [Importing from native object](#importing-from-native-object)
+  - [JSON](#json)
 
 ## Overview
 
@@ -266,3 +267,11 @@ const nodeFromCustomObject = Node.parse(customObject, (object) => ({
 ```
 
 We’re back to the initial node representation.
+
+### JSON
+
+You can build and parse a [`JSON`] tree with `#toJSON(constructor)` and `Node#fromJSON(json, constructor)`.
+
+The methods are small wrappers around `#encode()` and `Node#parse()`.
+
+[`JSON`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
